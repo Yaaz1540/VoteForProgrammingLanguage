@@ -36,7 +36,6 @@ class ViewControllerTwo: UIViewController {
             
             if let destination = segue.destination as? ViewControllerThree {
                 destination.passData = sender as? String
-                print("Sender Value: Thank you for your vote + \(sender)")
                     
 
         }

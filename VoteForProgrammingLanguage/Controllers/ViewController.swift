@@ -11,13 +11,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var programName = ComputerProgrammingLanguages()
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let vc: ViewControllerTwo = self.storyboard?.instantiateViewController(identifier: "ViewControllerTwo") as! ViewControllerTwo
         
         vc.image = UIImage(named: programName.programLanguageNames[indexPath.row])!

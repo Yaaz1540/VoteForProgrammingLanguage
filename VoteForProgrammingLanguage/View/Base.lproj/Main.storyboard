@@ -89,6 +89,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4GK-Nf-7KC"/>
+                    <connections>
+                        <outlet property="tableView" destination="UEy-CF-s8P" id="fda-8G-jCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,12 +11,15 @@ class ViewControllerThree: UIViewController {
 
     @IBOutlet weak var labelThree: UILabel!
     
-    var passData: String!
+    var passData: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelThree.text = passData
+        if let text = passData {
+            labelThree.text = "Sender Value: Thank you for your vote " + text
+
+        }
         
     }
     
